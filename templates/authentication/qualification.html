@@ -1,0 +1,106 @@
+<!DOCTYPE html>  
+<html>  
+<head> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Qualification</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+   {% load static %}
+  <link rel="stylesheet" href="{% static "css/qualificationstyle.css" %}"> 
+</head>  
+<body>
+
+
+  <div>
+     <!-- <h1>HELLO FROM NAVBAR</h1> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://algoristan.com/" target="_blank">
+        <img src="{% static "images/algoristan.jpeg" %}" alt="" width="60" height="60">
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+
+
+<form action="/qualification/" method="post" enctype='multipart/form-data'> 
+{% csrf_token %}  
+  <div class="container">  
+  <center>  <h1>Qualification Details</h1> </center>  
+  <hr>  
+  
+  
+  <h2>1. X/SSLC/Junior/Equivalent</h2>
+
+  <div>  
+  <label>   
+  <b>Degree</b>  
+  </label><br>  
+  <input type="radio" value="marksheet" name="degree1" checked > Marksheet   
+  <input type="radio" value="Other" name="degree1"> Other  
+  </div>
+
+  <b><label>School</label></b> 
+  <input type="text" name="school1" size="35" required />   
+  
+  <b><label>Board</label></b>   
+  <input type="text" name="board1" size="35"required /> 
+
+  <b><label>Area of Specialization</label></b>   
+  <input type="text" name="aos1" size="35"required />
+
+  <b>Country</b>
+  <td><input type="text" name="country1" placeholder="India" /></td> 
+
+  <b>State</b>
+  <td><input type="text" name="state1" maxlength="50" placeholder="Bihar"/></td>
+
+  <b>Simple average percentage/CGPA/Grade for all semester/years</b>
+  <td><input type="text" name="percentage1" inputmode="numeric" maxlength="50"/></td>
+
+  <div>
+  <label>
+  <b>Passing month & year</b>
+  </label>
+  <input type="date" name="dop1" id="month&years">
+  </div> 
+
+
+  <label>
+  <b>Upload your certificate</b>
+  </label>
+  <input type="file" name="file1" value="uploadfile">
+
+  <br><br>
+
+
+    <button type="submit" class="registerbtn">Save & Continue</button>
+   
+  </div>    
+</form>  
+</body>  
+</html>  

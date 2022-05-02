@@ -1,0 +1,109 @@
+<!DOCTYPE html>  
+<html>  
+<head> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Certificate</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+   {% load static %}
+  <link rel="stylesheet" href="{% static "css/qualificationstyle.css" %}"> 
+</head>  
+<body>
+
+  <div>
+     <!-- <h1>HELLO FROM NAVBAR</h1> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://algoristan.com/" target="_blank">
+        <img src="{% static "images/algoristan.jpeg" %}" alt="" width="60" height="60">
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+  <form action="/certificate/" method="post" enctype='multipart/form-data'> 
+  {% csrf_token %}  
+  <div class="container">  
+  <center><h1>Add Certificate</h1></center>  
+  <hr> 
+
+  <b><label>Certificate number</label></b> 
+  <input type="text" name="certificate_no" size="20" required />
+
+  <b><label>Certified by</label></b> 
+  <input type="text" name="certified_by" size="50" required />
+
+  <!--<b><label>Certificate awarded by</label></b> 
+  <input type="text" name="certificateawarded" size="50" required /> -->
+
+  <b><label>Registration number</label></b> 
+  <input type="text" name="certificate_reg_no" size="20" required />
+
+  <b><label>Course name</label></b> 
+  <input type="text" name="certificate_coursename" size="50" required />
+
+  <b><label>Course duration</label></b> 
+  <input type="text" name="certificate_courseduration" size="50" required />
+
+  <b><label>Grade achived</label></b> 
+  <input type="text" name="certificate_gradeachieved" size="50" required />
+
+  <div>
+  <label>
+  <b>Date of issue</b>
+  </label>
+  <input type="date" name="certificate_dateofissue" id="month&years">
+  </div> 
+
+  <div>
+  <label>
+  <b>Valid Till</b>
+  </label>
+  <input type="date" name="certificate_validtill" id="month&years">
+  </div> 
+
+  <label>
+  <b>Upload Certificate</b>
+  <input type="file" name="certificate_uploadcertificate" id="fileToUpload">
+  </label>
+
+  <br><br>
+
+  <button type="submit" class="registerbtn">Submit</button>
+
+</div>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

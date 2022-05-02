@@ -1,0 +1,139 @@
+<!DOCTYPE html>  
+<html>  
+<head> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Patents</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+   {% load static %}
+  <link rel="stylesheet" href="{% static "css/qualificationstyle.css" %}"> 
+</head>  
+<body>
+
+  <div>
+     <!-- <h1>HELLO FROM NAVBAR</h1> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://algoristan.com/" target="_blank">
+        <img src="{% static "images/algoristan.jpeg" %}" alt="" width="60" height="60">
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+<form action="/patents/" method="post" enctype='multipart/form-data'>  
+  {% csrf_token %}
+  <div class="container">  
+  <center><h1>Patents Information Form</h1></center>  
+  <hr> 
+
+  <b><label>Title</label></b> 
+  <input type="text" name="patent_title" size="50" required />
+
+  <b><label>Patent number</label></b> 
+  <input type="text" name="patent_no" size="20" required />
+
+  <b><label>Abstract</label></b> 
+  <input type="textarea" name="patent_abstract" size="50" required /><br>
+
+  <b><label>Inventors</label></b> 
+  <input type="text" name="patent_inventors" size="50" required />
+
+  <b><label for="status">Status</label></b>
+  <select id="status" name="patent_status">
+  <option value="filled">Filed</option>
+  <option value="notfilled">Published</option>
+  <option value="notfilled">Accepted</option>
+  </select>
+
+  <div>
+  <label>
+  <b>Filing date</b>
+  </label>
+  <input type="date" name="patent_filing_date" id="month&years">
+  </div> 
+
+  <label>
+  <b>Proof of Filing</b>
+  <input type="file" name="patent_proofoffiling" id="fileToUpload">
+  </label>
+
+
+  <div>
+  <label>
+  <b>Publish date</b>
+  </label>
+  <input type="date" name="patent_publish_date" id="month&years">
+  </div> 
+
+  <label>
+  <b>Proof of publish</b>
+  <input type="file" name="patent_proofofpublish" id="fileToUpload">
+  </label>
+
+
+  <div>
+  <label>
+  <b>Issue date</b>
+  </label>
+  <input type="date" name="patent_issue_date" id="month&years">
+  </div>
+
+  <label>
+  <b>Proof of issue</b>
+  <input type="file" name="patent_proofofissue" id="fileToUpload">
+  </label>
+
+<br><br>
+  
+  <label>
+  <b>Proof of acceptance</b>
+  <input type="file" name="patent_proofofacceptance" id="fileToUpload">
+  </label>
+
+
+<br><br>
+  <label>
+  <b>Patents Documents</b>
+  <input type="file" name="patent_document" id="fileToUpload">
+  </label> 
+
+
+  <br><br>
+
+  <button type="submit" class="registerbtn">Submit</button>
+
+</div>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
