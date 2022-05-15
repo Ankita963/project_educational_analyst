@@ -25,9 +25,9 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item px-3">
+          <!--<li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
+          </li>-->
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="#">About</a>
           </li>
@@ -44,7 +44,7 @@
   <br>
   <br>
 
-<form action="/researchpaper" method="post"> 
+<form action="/researchpaper/" method="post" enctype='multipart/form-data'> 
 {% csrf_token %}  
   <div class="container">  
   <center>  <h1>Research Paper Submission Form</h1> </center>  
@@ -54,43 +54,45 @@
   <input type="text" name="research_papertitle" size="50" required />
 
   <b><label>Author</label></b> 
-  <input type="text" name="author" size="50" required />
+  <input type="text" name="research_author" size="50" required />
 
   <b><label>ORCID ID</label></b> 
-  <input type="text" name="orcidid" size="50" required />
+  <input type="text" name="research_orcid" size="50" required />
 
   <b><label>DOI(Document Object Identifier)</label></b> 
-  <input type="text" name="doi" size="50" required />
+  <input type="text" name="research_doi" size="50" required />
 
 
   <b><label for="username">Email Address of corresponding author</label></b>
-  <input type="email" placeholder="Enter your Email Address" id="email" required /><br>
+  <input type="email" name="research_emailofauthor" placeholder="Enter your Email Address" id="email" required /><br>
 
   <b>Abstract</b>
-  <textarea cols="80" rows="5" value="abstract" required></textarea>
-
-  <b><label>Author</label></b> 
-  <input type="text" name="author" size="50" placeholder="yours" required /> 
+  <textarea cols="80" name="research_abstract" rows="5" value="abstract" required></textarea> 
 
   
   <b><label>List of authors</label></b> 
-  <input type="text" name="listofauthors" size="50" required />
+  <input type="text" name="research_listofauthor" size="50" required />
 
   <b><label>Research paper area</label></b> 
-  <input type="text" name="area" size="50" required />
+  <input type="text" name="research_paper_area" size="50" required />
 
   <b><label>Affiliation</label></b> 
-  <input type="text" name="affiliation" size="50" required /> 
+  <input type="text" name="research_affiliation" size="50" required /> 
 
   <b>Country</b>
-  <td><input type="text" name="Country" placeholder="India" /></td>
+  <td><input type="text" name="research_country" placeholder="India" /></td>
 
   <label>
   <b>Attach Research Paper</b>
-  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="file" name="attach_researchpaper" id="fileToUpload">
   </label>
 
 <br><br>
+  <label>
+  <b>Proof of acceptance</b>
+  <input type="file" name="proof_of_acceptance" id="fileToUpload">
+  </label>
+
 
   <button type="submit" class="registerbtn">Submit</button>
 

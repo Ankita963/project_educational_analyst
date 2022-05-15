@@ -1,9 +1,9 @@
-<!--<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html>  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Create Profile</title>
+    <title>Edit Profile</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
 
   <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
     <div class="container-fluid">
       <a class="navbar-brand" href="https://algoristan.com/" target="_blank">
         <img src="{% static "images/algoristan.jpeg" %}" alt="" width="60" height="60">
@@ -24,9 +25,9 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item px-3">
+          <!--<li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
+          </li>-->
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="#">About</a>
           </li>
@@ -44,28 +45,94 @@
   <br>
 {% if std %}
    {% for student in std %}
-{{student.fname}}
 
-
+  <form action="/createprofile_edit/" method="post" enctype="multipart/form-data"> 
 {% csrf_token %} 
-
   <div class="container">  
   <center>  <h1>Edit Your Profile</h1> </center>  
   <hr style="color: black;">  
   <b><label>Firstname </label></b> 
-<input type="text" name="fname" placeholder= "Firstname" size="15" value={{student.fname}}   required />   
+<input type="text" name="fname" placeholder= "Firstname" size="15" value="{{student.fname}}" />   
+<b><label> Lastname: </label></b>   
+<input type="text" name="lname" placeholder="Lastname" size="15" value="{{student.lname}}" />  
 
-   {% endfor %}
-    </table>
 
-    {% else %}
-        <p>No employee records found!!!</p>
-        <td>{{student.fname}}</td>
-{% endif %}
+<div>
+<label>
+<b>Date of Birth </b>
+</label>
+<input type="date" name="dob" id="dob" value="{{student.dob}}" />
+</div>
+
+
+
+<div>  
+<label>   
+<b>Gender </b>  
+</label><br>  
+<input type="radio" value="Male" name="gender" checked > Male   
+<input type="radio" value="Female" name="gender"> Female   
+<input type="radio" value="Other" name="gender"> Other  
+</div>
+
+
+<label>   
+<b>Phone </b>  
+</label>  
+<input type="text" name="ccode" placeholder="Country Code"  value="+91" size="2"/>   
+<input type="text" name="phone" placeholder="phone no." size="10"/ >  
+
+
+ <label for="email"><b>Email</b></label>  
+ <input type="text" placeholder="Enter Email" name="email" value="{{student.email}}">  
+
+
+ <label for="email"><b>Secondary Email</b></label>  
+ <input type="text" placeholder="Enter Email" name="secemail" value="{{student.secemail}}" >  
+
+<b>Address for communication</b>  
+<textarea cols="80" rows="5" placeholder="Address" name="add" value="address" value="{{student.add}}"> 
+</textarea>
+
+
+
+<b>City</b>
+<td><input type="text" name="city" maxlength="50" placeholder="Patna" value={{student.city}}/></td>
+
+
+
+<b>Pin Code</b>  
+<input  type="text" class="pincode" inputmode="numeric" maxlength="6" placeholder="800026" name="pin" value="{{student.pin}}" />
+
+
+<b>State</b>
+<td><input type="text" name="state" maxlength="50" placeholder="Bihar" value="{{student.state}}" /></td>
+
+
+<b>Country</b>
+<td><input type="text" name="country" placeholder="India" value="{{student.country}}" /></td>
+
+
+<tr>
+<td><b>Hobbies </b><br /></td>
+<td>
+
+<input type="text" name="hobbies" maxlength="50" placeholder="Ex- Teaching" value={{student.hobbies}} />
+
+</td>
+</tr>
+
+  {% endfor %}
+  {% else %}
+    <p>No employee records found!!!</p>
+    <td>{{student.fname}}</td>
+  {% endif %}
+  
     
 <button type="submit" class="registerbtn">Save & Continue</button>
-
+</div>
+</form>
 
 
 </body>  
-</html>  -->
+</html>  

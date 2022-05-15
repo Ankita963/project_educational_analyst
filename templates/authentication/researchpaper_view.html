@@ -25,9 +25,9 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item px-3">
+          <!--<li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
+          </li>-->
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="#">About</a>
           </li>
@@ -55,27 +55,30 @@
         <th>DOI</th>
         <th>Email address of corresponding author</th>
         <th>Abstract</th>
-        <th>Author</th>
         <th>List of authors</th>
         <th>Researchpaper area</th>
         <th>Affiliations</th>
         <th>Country</th>
         <th>Attach Researchpaper</th>
+        <th>Proof of acceptance</th>
         </tr>
       </thead>
 
-   <!--   {% for student in std %}
+      {% for student in std %}
           <tr>
             <td>{{student.user_id}}</td>
-            <td>{{student.certificate_no}}</td>
-            <td>{{student.certified_by}}</td>
-            <td>{{student.certificate_reg_no}}</td>
-            <td>{{student.certificate_coursename}}</td>
-            <td>{{student.certificate_courseduration}}</td>
-            <td>{{student.certificate_gradeachieved}}</td>
-            <td>{{student.certificate_dateofissue}}</td>
-            <td>{{student.certificate_validtill}}</td>
-            <td>{{student.certificate_uploadcertificate}}</td>
+            <td>{{student.research_papertitle}}</td>
+            <td>{{student.research_author}}</td>
+            <td>{{student.research_orcid}}</td>
+            <td>{{student.research_doi}}</td>
+            <td>{{student.research_emailofauthor}}</td>
+            <td>{{student.research_abstract}}</td>
+            <td>{{student.research_listofauthor}}</td>
+            <td>{{student.research_paper_area}}</td>
+            <td>{{student.research_affiliation}}</td>
+            <td>{{student.research_country}}</td>
+            <td>{{student.attach_researchpaper}}</td>
+            <td>{{student.proof_of_acceptance}}</td>
           </tr>
       {% endfor %}
     </table>
@@ -85,7 +88,7 @@
         <td>{{student.fname}}</td>
 {% endif %}
 
-</div>   -->
+</div>  
 
 </body>
 </html>

@@ -36,12 +36,24 @@
           <!--<li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
           </li> -->
+
+          {% if session1 %}
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
+          </li>
+          
+          {% else %}
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/signin">Login</a>
           </li>
+
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/signup">Signup</a>
           </li>
+          {% endif %}
           </ul>
       </div>
     </div>
@@ -68,7 +80,7 @@
     <h3>Hello {{ fname }}</h3>
     <h4>You are successfully logged in</h4>
     
-    <button type="submit"> <a href="/signout"> SignOut</a></button>
+    <button type="button"> <a href="/signout"> SignOut</a></button>
     {% else %}
     <!--<div class="sinup">
     <button type="submit"> <a href="/signup"> SignUp</a></button>

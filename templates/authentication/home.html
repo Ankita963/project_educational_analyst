@@ -28,43 +28,48 @@
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
+          {% if session1 %}
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/createprofile">Create Profile</a>
           </li>
+          {% endif %}
           <li class="nav-item dropdown px-3">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Add
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Career Objective</a></li>
+            <!--<li><a class="dropdown-item" href="#">Career Objective</a></li>-->
             <li><a class="dropdown-item" href="/patents">Patents</a></li>
             <li><a class="dropdown-item" href="/certificate">Certificate</a></li>
             <li><a class="dropdown-item" href="/researchpaper">Research Papers</a></li>
             <li><a class="dropdown-item" href="/experience"> Work Experience</a></li>
             <li><a class="dropdown-item" href="/skills">Skills</a></li>
-            <li><a class="dropdown-item" href="#">Details</a></li>
+            <!--<li><a class="dropdown-item" href="#">Details</a></li>-->
             <li><a class="dropdown-item" href="/project">Projects</a></li>
             <li><a class="dropdown-item" href="/achievements">Achievements</a></li>
-            
           </ul>
         </li>
-        <li class="nav-item dropdown px-3">
+
+
+        <!--<li class="nav-item dropdown px-3">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Views
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="/patentsview">Patents</a></li>
-            <li><a class="dropdown-item" href="#">Certificate</a></li>
-            <li><a class="dropdown-item" href="#">Research Papers</a></li>
-            <li><a class="dropdown-item" href="#">Experience</a></li>
-            <li><a class="dropdown-item" href="#">Skills</a></li>
-            <li><a class="dropdown-item" href="#">Details</a></li>
-            <li><a class="dropdown-item" href="#">Projects</a></li>
-            <li><a class="dropdown-item" href="#">Achievements</a></li>
-            <li><a class="dropdown-item" href="#">Certifications</a></li>
             <li><a class="dropdown-item" href="/createprofileview">Createprofileview</a></li>
-          </ul>
+            <li><a class="dropdown-item" href="/patentsview">Patents</a></li>
+            <li><a class="dropdown-item" href="/certificateview">Certificate</a></li>
+            <li><a class="dropdown-item" href="#">Research Papers</a></li>
+            <li><a class="dropdown-item" href="/experienceview">Work Experience</a></li>
+            <li><a class="dropdown-item" href="/skillview">Skills</a></li>
+            <li><a class="dropdown-item" href="#">Details</a></li>
+            <li><a class="dropdown-item" href="/projectview">Projects</a></li>
+            <li><a class="dropdown-item" href="/achievementsview">Achievements</a></li>-->
+            <!--<li><a class="dropdown-item" href="#">Certifications</a></li>-->
+          <!--</ul>
         </li>
+
+
         <li class="nav-item dropdown px-3">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Edit
@@ -80,7 +85,11 @@
             <li><a class="dropdown-item" href="#">Achievements</a></li>
             <li><a class="dropdown-item" href="#">Certifications</a></li>
           </ul>
-        </li>
+        </li>-->
+
+        <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/viewall">View</a>
+          </li>
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="#">Certificate</a>
           </li>

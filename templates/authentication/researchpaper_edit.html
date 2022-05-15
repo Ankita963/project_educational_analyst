@@ -1,0 +1,115 @@
+<!DOCTYPE html>  
+<html>  
+<head> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ResearchPaper_Edit</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+   {% load static %}
+  <link rel="stylesheet" href="{% static "css/qualificationstyle.css" %}"> 
+</head>  
+<body>
+
+  <div>
+     <!-- <h1>HELLO FROM NAVBAR</h1> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://algoristan.com/" target="_blank">
+        <img src="{% static "images/algoristan.jpeg" %}" alt="" width="60" height="60">
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!--<li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>-->
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+<form action="/researchpaperedit/" method="post"> 
+{% csrf_token %}  
+  <div class="container">  
+  <center>  <h1>Research Paper Submission Form</h1> </center>  
+  <hr> 
+
+  <b><label>Paper Title</label></b> 
+  <input type="text" name="research_papertitle" size="50" value="{{student.research_papertitle}}" />
+
+  <b><label>Author</label></b> 
+  <input type="text" name="research_author" size="50" value="{{student.research_author}}" />
+
+  <b><label>ORCID ID</label></b> 
+  <input type="text" name="research_orcid" size="50" value="{{student.research_orcid}}" />
+
+  <b><label>DOI(Document Object Identifier)</label></b> 
+  <input type="text" name="research_doi" size="50" value="{{student.research_doi}}" />
+
+
+  <b><label for="username">Email Address of corresponding author</label></b>
+  <input type="email" name="research_emailofauthor" placeholder="Enter your Email Address" id="email" value="{{student.research_emailofauthor}}" /><br>
+
+  <b>Abstract</b>
+  <textarea cols="80" name="research_abstract" rows="5" value="abstract" value="{{student.research_abstract}}"> </textarea>
+
+  
+  <b><label>List of authors</label></b> 
+  <input type="text" name="research_listofauthor" size="50" value="{{student.research_listofauthor}}" />
+
+  <b><label>Research paper area</label></b> 
+  <input type="text" name="research_paper_area" size="50" value="{{student.research_paper_area}}" />
+
+  <b><label>Affiliation</label></b> 
+  <input type="text" name="research_affiliation" size="50" value="{{student.research_affiliation}}" /> 
+
+  <b>Country</b>
+  <td><input type="text" name="research_country" placeholder="India" value="{{student.research_country}}" /></td>
+
+  <label>
+  <b>Attach Research Paper</b>
+  <input type="file" name="attach_researchpaper" id="fileToUpload" value="{{student.attach_researchpaper}}">
+  </label>
+
+<br><br>
+<label>
+  <b>Proof of acceptance</b>
+  <input type="file" name="proof_of_acceptance" id="fileToUpload" value="{{student.proof_of_acceptance}}">
+  </label>
+
+
+  <button type="submit" class="registerbtn">Submit</button>
+
+  </div>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+  
+
+
+
+
+

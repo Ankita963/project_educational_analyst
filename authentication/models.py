@@ -17,6 +17,7 @@ class signuptab(models.Model):
     pass2=models.TextField(max_length=191)
 
 
+
 class signintab(models.Model):
     username=models.TextField(max_length=191)
     pass1=models.TextField(max_length=191)
@@ -138,9 +139,8 @@ class certificatetab(models.Model):
     certificate_gradeachieved=models.TextField(max_length=50)
     certificate_dateofissue=models.DateField()
     certificate_validtill=models.DateField()
-    certificate_uploadcertificate=models.FileField(upload_to='GFG/gfg/UploadDoc')
+    certificate_uploadcertificate=models.FileField(upload_to='')
 
-"""
 class researchpapertab(models.Model):
     user_id=models.TextField(max_length=10)
     research_papertitle=models.TextField(max_length=255)
@@ -149,13 +149,12 @@ class researchpapertab(models.Model):
     research_doi=models.TextField(max_length=50)
     research_emailofauthor=models.TextField(max_length=50)
     research_abstract=models.TextField(max_length=50)
-    research_author=models.TextField(max_length=50)
     research_listofauthor=models.TextField(max_length=50)
     research_paper_area=models.TextField(max_length=50)
     research_affiliation=models.TextField(max_length=50)
     research_country=models.TextField(max_length=50)
-    attach_researchpaper=models.FileField(upload_to='GFG/gfg/UploadDoc')
-"""
+    attach_researchpaper=models.FileField(upload_to='')
+    proof_of_acceptance=models.FileField(upload_to='')
 
 class workexperiencetab(models.Model):
     user_id=models.TextField(max_length=10)
@@ -164,6 +163,7 @@ class workexperiencetab(models.Model):
     work_from=models.DateField()
     work_to=models.DateField()
     work_responsibility=models.TextField(max_length=50)
+    attach_experience=models.FileField(upload_to='',null=True)
 
 class skilltab(models.Model):
     user_id=models.TextField(max_length=10)
@@ -177,11 +177,18 @@ class projecttab(models.Model):
     project_role=models.TextField(max_length=50)
     project_duration=models.TextField(max_length=50)
     team_size=models.TextField(max_length=50)
+    giturl=models.TextField(max_length=100,null=True)
+    projectfund=models.TextField(max_length=50,null=True)
+    fund_document=models.FileField(upload_to='',null=True)
+    projectwebsite=models.TextField(max_length=50,null=True)
 
 class achievementstab(models.Model):
     user_id=models.TextField(max_length=10)
     achievements_title=models.TextField(max_length=50)
     achievements_details=models.TextField(max_length=50)
+    achievements_date=models.DateField(null=True)
+    award=models.TextField(max_length=100,null=True)
+    achievements_proof=models.FileField(upload_to='',null=True)
 
 
 

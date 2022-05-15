@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Viewall</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+   {% load static %}
+  <link rel="stylesheet" href="{% static "css/qualificationstyle.css" %}">
+</head>
+<body>
+  <div>
+     <!-- <h1>HELLO FROM NAVBAR</h1> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://algoristan.com/" target="_blank">
+        <img src="{% static "images/algoristan.jpeg" %}" alt="" width="60" height="60">
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Forms</th>
+        <th>View Button</th>
+        <th>Edit Button</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Edit your profile</td>
+        <td><a class="dropdown-item" href="/createprofileview">View</a></td>
+        <td><a class="dropdown-item" href="/createprofile_edit">Edit</a></td>
+      </tr>
+      <tr>
+        <td>Patents</td>
+        <td><a class="dropdown-item" href="/patentsview">View</a></td>
+        <td><a class="dropdown-item" href="/patentsedit">Edit</td>
+      </tr>
+      <tr>
+        <td>Certificate</td>
+        <td><a class="dropdown-item" href="/certificateview">View</a></td>
+        <td><a class="dropdown-item" href="/certificateedit">Edit</td>
+      </tr>
+      <tr>
+        <td>Research Paper</td>
+        <td><a class="dropdown-item" href="/researchpaperview">View</a></td>
+        <td><a class="dropdown-item" href="/researchpaperedit">Edit</td>
+      </tr>
+      <tr>
+        <td>Work Experience</td>
+        <td><a class="dropdown-item" href="/experienceview">View</a></td>
+        <td><a class="dropdown-item" href="/experienceedit">Edit</td>
+      </tr>
+      <tr>
+        <td>Skills</td>
+        <td><a class="dropdown-item" href="/skillview">View</a></td>
+        <td><a class="dropdown-item" href="/skilledit">Edit</td>
+      </tr>
+      <!--<tr>
+        <td>Details</td>
+        <td><a class="dropdown-item" href="/#">View</a></td>
+        <td><a class="dropdown-item" href="/#">Edit</td>
+      </tr>-->
+      <tr>
+        <td>Projects</td>
+        <td><a class="dropdown-item" href="/projectview">View</a></td>
+        <td><a class="dropdown-item" href="/projectedit">Edit</td>
+      </tr>
+      <tr>
+        <td>Achievements</td>
+        <td><a class="dropdown-item" href="/achievementsview">View</a></td>
+        <td><a class="dropdown-item" href="/achievementsedit">Edit</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</body>
+</html>

@@ -25,14 +25,14 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item px-3">
+          <!--<li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
+          </li>-->
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="#">About</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
           </li>
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="/signout">Logout</a>
@@ -44,7 +44,7 @@
   <br>
   <br>
 
-  <form action="/experience" method="post" enctype='multipart/form-data'> 
+  <form action="/experience/" method="post" enctype='multipart/form-data'> 
   {% csrf_token %}  
   <div class="container">  
   <center><h1>Work Experience</h1></center>  
@@ -74,6 +74,9 @@
   <input type="textarea" name="work_responsibility" size="50">
 
   <br><br>
+  <b><label>Attach work experience proof</label></b> 
+  <input type="file" name="attach_experience" id="fileToUpload">
+
 
   <button type="submit" class="registerbtn">Submit</button>
 
